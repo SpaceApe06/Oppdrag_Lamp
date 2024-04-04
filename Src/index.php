@@ -17,18 +17,19 @@
                     <form method="post" action="log_in.php">
 
                         <label for="username">Name:</label>
-                        <input type="text" id="username" name="username" placeholder="Username" maxlength="20"><br><br>
+                        <input type="text" id="username" name="username" placeholder="Name" maxlength="20"><br><br>
 
                         <label for="epost">skriv Epost</label>
                         <input type="text" id="epost" name="epost" placeholder="Epost" maxlength="20"><br><br>
 
                         <label for="password">Password:</label>
-                        <input type="password" id="password" name="password" placeholder="Username" maxlength="20"><br><br>
+                        <input type="password" id="password" name="password" placeholder="Passqord" maxlength="20"><br><br>
 
                         <a href="register_page.php">Don't have an account? Sign Up</a>
                         <button id="loginButton" type="submit" >Login</button><br/>
                     </form>
                     <p>CONSPIRACT THEORY: EVEN IS A LLAMA</p>
+
                 </div>
             </div>
         </div>
