@@ -11,7 +11,7 @@
     <body>
         <div>
             <div id="logg_in_container">  
-                <h1>LAMP</h1>   
+                <h1>LAMP</h1>
                 <h1 id="logg_in_Title">Logg inn</h1>
                 <div id="logg_in">
                     <form method="post" action="log_in.php">
@@ -28,8 +28,6 @@
                         <a href="register_page.php">Don't have an account? Sign Up</a>
                         <button id="loginButton" type="submit" >Login</button><br/>
                     </form>
-                    <p>CONSPIRACT THEORY: EVEN IS A LLAMA</p>
-
                 </div>
             </div>
         </div>

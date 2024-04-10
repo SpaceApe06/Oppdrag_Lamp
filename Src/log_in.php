@@ -44,7 +44,7 @@ if(mysqli_num_rows($result) === 1) {
         echo "Logged in";
         $_SESSION['username'] = $row['username'];
         $_SESSION['epost'] = $row['epost'];
-        $_SESSION['id'] = $row['userID'];
+        $_SESSION['userID'] = $row['userID'];
         $_SESSION['admin'] = $row['admin'];
         header("Location: ticket.php");
         

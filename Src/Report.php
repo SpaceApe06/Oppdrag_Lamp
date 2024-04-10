@@ -12,6 +12,8 @@ function validate($data) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $issue = validate($_POST["issue"]);
     $info = validate($_POST["info"]);
+    $userID = $_SESSION["userID"];
+    $status = "0";
 
     if(empty($issue)) {
         header ("Location: ticket.php?error=Title is required!");
@@ -23,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Insert user data into the database
-    $query = "INSERT INTO Tickets (issue, info) VALUES ('$issue', '$info')";
+    $query = "INSERT INTO Tickets (issue, info, userID, status) VALUES ('$issue', '$info', '$userID', '$status')";
     $result = mysqli_query($conn, $query);
 
     if ($result) {
@@ -33,20 +35,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Something went wrong";
     }
 }
-// if(isset($_POST['ticket']) && isset($_POST['info'])) {
-
-//     function validate($data) {
-//         $data = trim($data);
-//         $data = stripslashes($data);
-//         $data = htmlspecialchars($data);
-//         return $data;
-//     }
-// }
-
-// $ticket = validate($_POST['ticket']);
-// $info = validate($_POST['info']);
-
-
-// $Tresult = mysqli_query($conn, $sql);
 
 ?>

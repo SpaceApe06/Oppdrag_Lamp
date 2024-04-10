@@ -6,7 +6,7 @@ if(isset($_GET['success'])) {
     echo $_GET['success'] . "<br>";
 }
 
-if(isset($_SESSION['admin']) && $_SESSION['admin']) {
+if(isset($_SESSION['admin'])) {
     // Admin-specific features here
     echo "velkommen SEÑOR eller SEÑORITA admin, You have additional cool stuff.";
 
@@ -24,6 +24,7 @@ if(isset($_SESSION['admin']) && $_SESSION['admin']) {
         echo "<h2>" . $ticket['ticket'] . "</h2>";
         echo "<p>Sender: " . $ticket['username'] . " (" . $ticket['Email'] . ")</p>";
         echo "<p>" . $ticket['info'] . "</p>";
+        echo "<p>Saksnummer:" . $ticket['ticketID'] . "</p>";
         echo "</div>";
     }
     echo "</div>";
@@ -31,10 +32,12 @@ if(isset($_SESSION['admin']) && $_SESSION['admin']) {
     // Normal user features here
     echo "Velkommen, ønsker du å skrive en ticket?";
 
+
     // Check if the user is logged in before trying to access $_SESSION['userID']
     if (isset($_SESSION['userID'])) {
         // Get the userID of the currently logged in user
         $currentUserID = $_SESSION['userID'];
+
 
         // Prepare SQL query to select all tickets where userID is the currently logged in user
         $sql = "SELECT Tickets.*, Users.username, Users.Email FROM Tickets JOIN Users ON Tickets.userID = Users.userID WHERE Tickets.userID = '$currentUserID'";
@@ -47,9 +50,10 @@ if(isset($_SESSION['admin']) && $_SESSION['admin']) {
         echo "<div id='userTickets'>";
         foreach($tickets as $ticket) {
             echo "<div class='ticket'>";
-            echo "<h2>" . $ticket['ticket'] . "</h2>";
+            echo "<h2>" . $ticket['issue'] . "</h2>";
             echo "<p>Sender: " . $ticket['username'] . " (" . $ticket['Email'] . ")</p>";
             echo "<p>" . $ticket['info'] . "</p>";
+            echo "<p>Saksnummer:" . $ticket['ticketID'] . "</p>";
             echo "</div>";
         }
         echo "</div>";
@@ -80,7 +84,7 @@ if(isset($_SESSION['admin']) && $_SESSION['admin']) {
                         <label for="tittel">Hva er problemet</label> <br>
                         <input type="text" id="issue" name="issue" placeholder="Tittel" maxlength="20"><br><br>
                         <label for="info">Skriv om problemet og gi mest mulig nødvendig informasjon </label> <br>
-                        <input type="text" id="info" name="info" placeholder="Problem" maxlength="20"><br><br>
+                        <input type="text" id="info" name="info" placeholder="Problem" maxlength="100"><br><br>
                         <button id="ticketButton" type="submit" >Send Ticket</button><br/>
                     </form>
 
