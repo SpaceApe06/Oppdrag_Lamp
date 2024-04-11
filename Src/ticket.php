@@ -81,7 +81,7 @@ if(isset($_SESSION['admin'])) {
                 <h1 id="Report">Send Ticket</h1>
                 <div id="Report_Container">
 
-                    <form method="post" action="report.php">
+                    <form method="post" action="Report.php">
                         <label for="tittel">Hva er problemet</label> <br>
                         <input type="text" id="issue" name="issue" placeholder="Tittel" maxlength="20"><br><br>
                         <label for="info">Skriv om problemet og gi mest mulig nødvendig informasjon </label> <br>
