@@ -21,7 +21,7 @@ if(isset($_SESSION['admin'])) {
     echo "<div id='adminTickets'>";
     foreach($tickets as $ticket) {
         echo "<div class='ticket'>";
-        echo "<h2>" . $ticket['ticket'] . "</h2>";
+        echo "<h2>" . $ticket['issue'] . "</h2>";
         echo "<p>Sender: " . $ticket['username'] . " (" . $ticket['Email'] . ")</p>";
         echo "<p>" . $ticket['info'] . "</p>";
         echo "<p>Saksnummer:" . $ticket['ticketID'] . "</p>";
