@@ -54,6 +54,7 @@ if(isset($_SESSION['admin'])) {
             echo "<p>Sender: " . $ticket['username'] . " (" . $ticket['Email'] . ")</p>";
             echo "<p>" . $ticket['info'] . "</p>";
             echo "<p>Saksnummer:" . $ticket['ticketID'] . "</p>";
+            echo "<p>Status: " . $ticket['status'] . "</p>";
             echo "</div>";
         }
         echo "</div>";
